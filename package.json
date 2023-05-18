@@ -1,19 +1,20 @@
 {
-  "name": "n8n-nodes-<...>",
+  "name": "n8n-nodes-pgp",
   "version": "0.1.0",
-  "description": "",
+  "description": "n8n community node to encrypt and decrypt data using OpenPGP.",
   "keywords": [
-    "n8n-community-node-package"
+    "n8n-community-node-package",
+    "OpenPGP"
   ],
   "license": "MIT",
-  "homepage": "",
+  "homepage": "https://github.com/bramkn/n8n-nodes-pgp.git",
   "author": {
-    "name": "",
-    "email": ""
+    "name": "Bram Knuever",
+    "email": "bram@knitco.nl"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/<...>/n8n-nodes-<...>.git"
+    "url": "https://github.com/bramkn/n8n-nodes-pgp.git"
   },
   "main": "index.js",
   "scripts": {
@@ -30,12 +31,10 @@
   "n8n": {
     "n8nNodesApiVersion": 1,
     "credentials": [
-      "dist/credentials/ExampleCredentialsApi.credentials.js",
-      "dist/credentials/HttpBinApi.credentials.js"
+      "dist/credentials/PgpKey.credentials.js"
     ],
     "nodes": [
-      "dist/nodes/ExampleNode/ExampleNode.node.js",
-      "dist/nodes/HttpBin/HttpBin.node.js"
+      "dist/nodes/Pgp/Pgp.node.js"
     ]
   },
   "devDependencies": {
@@ -48,5 +47,8 @@
     "n8n-workflow": "*",
     "prettier": "^2.7.1",
     "typescript": "~4.8.4"
+  },
+  "dependencies": {
+    "openpgp": "^5.9.0"
   }
 }
