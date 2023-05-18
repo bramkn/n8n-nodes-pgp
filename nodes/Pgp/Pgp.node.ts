@@ -16,7 +16,7 @@ import * as openpgp from 'openpgp';
 export class Pgp implements INodeType {
 	description: INodeTypeDescription = {
 		displayName: 'PGP',
-		// eslint-disable-next-line n8n-nodes-base/node-class-description-name-miscased
+		// eslint-disable-next-line
 		name: 'PGP',
 		icon: 'file:gpgplogo.svg',
 		group: ['input'],

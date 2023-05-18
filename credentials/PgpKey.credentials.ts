@@ -5,7 +5,7 @@ export class PgpKey implements ICredentialType {
 	// eslint-disable-next-line n8n-nodes-base/cred-class-field-name-unsuffixed
 	name = 'pgpKey';
 
-	displayName = 'PGP Key';
+	displayName = 'PGP Key API';
 
 	properties: INodeProperties[] = [
 		{
