@@ -18,7 +18,7 @@ export class Pgp implements INodeType {
 		displayName: 'PGP',
 		// eslint-disable-next-line
 		name: 'PGP',
-		icon: 'file:gpgplogo.svg',
+		icon: 'file:pgplogo.svg',
 		group: ['input'],
 		version: 1,
 		subtitle: '={{$parameter["operation"]}}',
