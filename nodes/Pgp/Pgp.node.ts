@@ -179,8 +179,8 @@ export class Pgp implements INodeType {
 						items[i].binary![outputBinaryPropertyName] = await this.helpers.prepareBinaryData(
 							buffer,
 						);
-						items[i].binary![outputBinaryPropertyName].fileName = `${binaryData.fileName}.gpg`;
-						items[i].binary![outputBinaryPropertyName].fileExtension = 'gpg';
+						items[i].binary![outputBinaryPropertyName].fileName = `${binaryData.fileName}.pgp`;
+						items[i].binary![outputBinaryPropertyName].fileExtension = 'pgp';
 						items[i].binary![outputBinaryPropertyName].mimeType = 'application/pgp-encrypted';
 
 						responseData = this.helpers.constructExecutionMetaData(
@@ -237,7 +237,11 @@ export class Pgp implements INodeType {
 						items[i].binary![outputBinaryPropertyName] = await this.helpers.prepareBinaryData(
 							buffer,
 						);
-						items[i].binary![outputBinaryPropertyName].fileName = `${binaryData.fileName}`;
+						let tempFileName = binaryData.fileName || "";
+						if(tempFileName.endsWith('.pgp')){
+							tempFileName = tempFileName?.slice(0,-4);
+						}
+						items[i].binary![outputBinaryPropertyName].fileName = `${tempFileName}`;
 
 						responseData = this.helpers.constructExecutionMetaData(
 							this.helpers.returnJsonArray(items[i]),
